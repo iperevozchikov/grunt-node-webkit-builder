@@ -22,7 +22,8 @@ module.exports = function(grunt) {
       // maintain backward compatibility by supporting old platform style
       switch(opt){
         case 'win':
-        case 'osx':
+        case 'osx32':
+	case 'osx64':
         case 'linux32':
         case 'linux64':
           if(!!options[opt]) {
@@ -30,11 +31,11 @@ module.exports = function(grunt) {
           }
           break;
 
-        case 'mac':
+        /*case 'mac32':
           if(!!options[opt]) {
             addPlatform(nwOptions, 'osx');
           }
-          break;
+          break;*/
 
         case 'timestamped_builds':
           nwOptions['buildType'] = 'timestamped';
